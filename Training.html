@@ -1,0 +1,203 @@
+<!Doctype html5>
+<html>
+<head>
+<title> Quiz day</title>
+
+<style>
+.container {
+display:flex;
+
+justify-content:end;
+}
+
+body {background-color:lightblue;}
+
+.one {
+background-color:gray;
+border:red;
+width:50px;
+height:10px;
+margin:2px 2px; 
+
+}
+.two {
+background-color:gray;
+border:red;
+width:50px;
+height:10px;
+margin:2px 2px; 
+
+}
+.three {
+background-color:gray;
+border:red;
+width:50px;
+height:10px;
+margin:2px 2px; 
+
+}
+.four {
+background-color:gray;
+border:red;
+width:50px;
+height:10px;
+margin:2px 2px; 2px 2px;
+
+}
+.five {
+background-color:gray;
+border:red;
+width:50px;
+height:10px;
+margin:2px 2px; 
+
+}
+</style>
+<script>
+var runningQuestion=0;
+var correct, chA, chB,chC,choices, choice, question=0; 
+
+var questions = [
+{
+   question:"What my favourite color?",
+   
+   choiceA:"Red",
+   choiceB:"Blue",
+   choiceC:"Black",
+   rightAnswer: "A"
+   }
+   ,
+   {
+   question:"What is my favourite hobby?",
+   choiceA:"Skydiving",
+   choiceB:"Fencing",
+   choiceC:"Gaming",
+   rightAnswer:"B"
+   },
+   {
+   question:"What is my favourite anime?",
+   choiceA:"One Piece",
+   choiceB:"Hero Academia",
+   choiceC:"None",
+   rightAnswer:"C"
+   },
+   {
+   question:"What is my favourite sauce?",
+   choiceA:"Hot sauce",
+   choiceB:"Mayonaise",
+   choiceC:"Relish",
+   rightAnswer:"A"
+   },
+   {
+   question:"What is my favourite Snack?",
+   choiceA:"Ice cream",
+   choiceB:"Cookie",
+   choiceC:"Cake",
+   rightAnswer:"B"
+   },
+   {
+   question:"How many sibling do I have?",
+   choiceA:"None",
+   choiceB:"four",
+   choiceC:"three",
+   rightAnswer:"C"
+   }];
+   function get(x){
+   return(x);
+   }
+
+
+   chA=questions[runningQuestion].choiceA;
+ chB=questions[runningQuestion].choiceB;
+ chC=questions[runningQuestion].choiceC;
+answer=questions[runningQuestion].rightAnswer;
+
+function startQuestion(){
+var nothingLand=get("askingQuestion");
+var choiceOne=get("choiceOne");
+var choiceTwo= get("choiceTwo");
+var choiceThree= get("choiceThree");
+
+
+if (runningQuestion>=questions.length){
+
+
+  return false;
+  }
+    
+	nothingLand.innerHTML+=question;
+	choiceOne.innerHTML+=chA;
+	choiceTwo.innerHTML+=chB;
+	choiceThree.innerHTML+=chC;
+	}
+	function checkAnswer(){
+	choices= getElementsByName("choices");
+	
+	for(var i=0;i<=choices.length;i++){
+	if(choices[i].checked){
+	choices=choices[i].value;
+	}}
+	
+	if(question[runningQuestion]==answer){
+	correct++;
+	
+  }
+ 
+  runningQuestion++;
+  
+  startQuestion();
+ }
+
+window.addEventListener("load",startQuestion);
+
+</script>
+</head>
+
+<body>
+<div class="container">
+<div class="one" id="one">
+
+</div>
+
+<div class="two" id="two">
+
+</div>
+<div class="three" id="three">
+
+</div>
+<div class="four" id="four">
+
+</div>
+<div class="five" id="five">
+
+</div>
+</div>
+
+
+</div>
+<form>
+  
+  <fieldset>
+
+  <legend> <h1 id="HateMe"> What do you know about me?</h1></legend>
+
+
+  
+  <h2  id = "askingQuestions"> </h2>
+       
+  <input type="radio" id="choiceOne" name="choices" value="choiceA">
+
+  
+  <input type="radio" id="choiceTwo" name="choices" value="choiceB">
+
+  
+  <input type="radio" id="choiceThree" name="choices" value="choiceC">
+  
+  <input type="submit" onclick="checkAnswer()">
+
+
+ 
+  </fieldset>
+  </form>
+  
+</html>
