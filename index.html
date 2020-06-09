@@ -1,5 +1,8 @@
+
+
 <!Doctype html5>
 <html>
+	// Abdu Aberra, Student Id:991527108
 <head>
 <title> Quiz day</title>
 
@@ -41,7 +44,7 @@ background-color:gray;
 border:red;
 width:50px;
 height:10px;
-margin:2px 2px; 2px 2px;
+margin:2px 2px; 
 
 }
 .five {
@@ -199,5 +202,105 @@ window.addEventListener("load",startQuestion);
  
   </fieldset>
   </form>
+	//forgot to close the body tag
+	</body>
+//I'm getting the property null of innerHTML because the console wasn't getting the element from the html first resulting into this error
+  <script>
+var runningQuestion=0;
+var correct, chA, chB,chC,choices, choice, question=0; 
+
+var questions = [
+{
+   question:"What my favourite color?",
+   
+   choiceA:"Red",
+   choiceB:"Blue",
+   choiceC:"Black",
+   rightAnswer: "A"
+   }
+   ,
+   {
+   question:"What is my favourite hobby?",
+   choiceA:"Skydiving",
+   choiceB:"Fencing",
+   choiceC:"Gaming",
+   rightAnswer:"B"
+   },
+   {
+   question:"What is my favourite anime?",
+   choiceA:"One Piece",
+   choiceB:"Hero Academia",
+   choiceC:"None",
+   rightAnswer:"C"
+   },
+   {
+   question:"What is my favourite sauce?",
+   choiceA:"Hot sauce",
+   choiceB:"Mayonaise",
+   choiceC:"Relish",
+   rightAnswer:"A"
+   },
+   {
+   question:"What is my favourite Snack?",
+   choiceA:"Ice cream",
+   choiceB:"Cookie",
+   choiceC:"Cake",
+   rightAnswer:"B"
+   },
+   {
+   question:"How many sibling do I have?",
+   choiceA:"None",
+   choiceB:"four",
+   choiceC:"three",
+   rightAnswer:"C"
+   }];
+   function get(x){
+   return(x);
+   }
+
+
+   chA=questions[runningQuestion].choiceA;
+ chB=questions[runningQuestion].choiceB;
+ chC=questions[runningQuestion].choiceC;
+answer=questions[runningQuestion].rightAnswer;
+
+function startQuestion(){
+var nothingLand=get("askingQuestion");
+var choiceOne=get("choiceOne");
+var choiceTwo= get("choiceTwo");
+var choiceThree= get("choiceThree");
+
+
+if (runningQuestion>=questions.length){
+
+
+  return false;
+  }
+    
+	nothingLand.innerHTML+=question;
+	choiceOne.innerHTML+=chA;
+	choiceTwo.innerHTML+=chB;
+	choiceThree.innerHTML+=chC;
+	}
+	function checkAnswer(){
+	choices= getElementsByName("choices");
+	
+	for(var i=0;i<=choices.length;i++){
+	if(choices[i].checked){
+	choices=choices[i].value;
+	}}
+	
+	if(question[runningQuestion]==answer){
+	correct++;
+	
+  }
+ 
+  runningQuestion++;
   
+  startQuestion();
+ }
+
+window.addEventListener("load",startQuestion);
+
+</script>
 </html>
