@@ -1,8 +1,5 @@
-
-
 <!Doctype html5>
 <html>
-	// Abdu Aberra, Student Id:991527108
 <head>
 <title> Quiz day</title>
 
@@ -44,7 +41,7 @@ background-color:gray;
 border:red;
 width:50px;
 height:10px;
-margin:2px 2px; 
+margin:2px 2px; 2px 2px;
 
 }
 .five {
@@ -56,104 +53,7 @@ margin:2px 2px;
 
 }
 </style>
-<script>
-var runningQuestion=0;
-var correct, chA, chB,chC,choices, choice, question=0; 
 
-var questions = [
-{
-   question:"What my favourite color?",
-   
-   choiceA:"Red",
-   choiceB:"Blue",
-   choiceC:"Black",
-   rightAnswer: "A"
-   }
-   ,
-   {
-   question:"What is my favourite hobby?",
-   choiceA:"Skydiving",
-   choiceB:"Fencing",
-   choiceC:"Gaming",
-   rightAnswer:"B"
-   },
-   {
-   question:"What is my favourite anime?",
-   choiceA:"One Piece",
-   choiceB:"Hero Academia",
-   choiceC:"None",
-   rightAnswer:"C"
-   },
-   {
-   question:"What is my favourite sauce?",
-   choiceA:"Hot sauce",
-   choiceB:"Mayonaise",
-   choiceC:"Relish",
-   rightAnswer:"A"
-   },
-   {
-   question:"What is my favourite Snack?",
-   choiceA:"Ice cream",
-   choiceB:"Cookie",
-   choiceC:"Cake",
-   rightAnswer:"B"
-   },
-   {
-   question:"How many sibling do I have?",
-   choiceA:"None",
-   choiceB:"four",
-   choiceC:"three",
-   rightAnswer:"C"
-   }];
-   function get(x){
-   return(x);
-   }
-
-
-   chA=questions[runningQuestion].choiceA;
- chB=questions[runningQuestion].choiceB;
- chC=questions[runningQuestion].choiceC;
-answer=questions[runningQuestion].rightAnswer;
-
-function startQuestion(){
-var nothingLand=get("askingQuestion");
-var choiceOne=get("choiceOne");
-var choiceTwo= get("choiceTwo");
-var choiceThree= get("choiceThree");
-
-
-if (runningQuestion>=questions.length){
-
-
-  return false;
-  }
-    
-	nothingLand.innerHTML+=question;
-	choiceOne.innerHTML+=chA;
-	choiceTwo.innerHTML+=chB;
-	choiceThree.innerHTML+=chC;
-	}
-	function checkAnswer(){
-	choices= getElementsByName("choices");
-	
-	for(var i=0;i<=choices.length;i++){
-	if(choices[i].checked){
-	choices=choices[i].value;
-	}}
-	
-	if(question[runningQuestion]==answer){
-	correct++;
-	
-  }
- 
-  runningQuestion++;
-  
-  startQuestion();
- }
-
-window.addEventListener("load",startQuestion);
-
-</script>
 </head>
 
 <body>
@@ -186,128 +86,126 @@ window.addEventListener("load",startQuestion);
 
 
   
-  <h2  id = "askingQuestions"> </h2>
-       
+  <h2  id = "askingQuestion"> </h2>
+ 
   <input type="radio" id="choiceOne" name="choices" value="choiceA">
 
-  
+  <br>
   <input type="radio" id="choiceTwo" name="choices" value="choiceB">
-
+<br>
   
   <input type="radio" id="choiceThree" name="choices" value="choiceC">
+ <br>
+ <br>
   
   <input type="submit" onclick="checkAnswer()">
-	  
-	 
-	  
-//to get help if you need one
+  <button onclick="reload">Reset</button>
+
 <button>
-<a href="externaltraining.html">Test</a>
+    <a href="externaltraining.html">Test</a>
 </button>
-
-
- 
   </fieldset>
   </form>
-	//forgot to close the body tag
-	</body>
-//I'm getting the property null of innerHTML because the console wasn't getting the element from the html first resulting into this error
+  
+  
   <script>
-var runningQuestion=0;
-var correct, chA, chB,chC,choices, choice, question=0; 
-
+var runningQuestion = 0;
+var correct=0;
+var chA, chB, chC, choices, choice, question = 0;
+ 
 var questions = [
 {
-   question:"What my favourite color?",
-   
-   choiceA:"Red",
-   choiceB:"Blue",
-   choiceC:"Black",
+   question: "What my favourite color?",
+   choiceA: "Red",
+   choiceB: "Blue",
+   choiceC: "Black",
    rightAnswer: "A"
    }
    ,
    {
-   question:"What is my favourite hobby?",
-   choiceA:"Skydiving",
-   choiceB:"Fencing",
-   choiceC:"Gaming",
-   rightAnswer:"B"
+   question: "What is my favourite hobby?",
+   choiceA: "Skydiving",
+   choiceB: "Fencing",
+   choiceC: "Gaming",
+   rightAnswer: "B"
    },
    {
-   question:"What is my favourite anime?",
-   choiceA:"One Piece",
-   choiceB:"Hero Academia",
-   choiceC:"None",
+   question: "What is my favourite anime?",
+   choiceA: "One Piece",
+   choiceB: "Hero Academia",
+   choiceC: "None",
    rightAnswer:"C"
    },
    {
-   question:"What is my favourite sauce?",
-   choiceA:"Hot sauce",
-   choiceB:"Mayonaise",
-   choiceC:"Relish",
-   rightAnswer:"A"
+   question: "What is my favourite sauce?",
+   choiceA: "Hot sauce",
+   choiceB: "Mayonaise",
+   choiceC: "Relish",
+   rightAnswer: "A"
    },
    {
-   question:"What is my favourite Snack?",
-   choiceA:"Ice cream",
-   choiceB:"Cookie",
-   choiceC:"Cake",
-   rightAnswer:"B"
+   question: "What is my favourite Snack?",
+   choiceA: "Ice cream",
+   choiceB: "Cookie",
+   choiceC: "Cake",
+   rightAnswer: "B"
    },
    {
-   question:"How many sibling do I have?",
-   choiceA:"None",
-   choiceB:"four",
-   choiceC:"three",
-   rightAnswer:"C"
+   question: "How many sibling do I have?",
+   choiceA: "None",
+   choiceB: "four",
+   choiceC: "three",
+   rightAnswer: "C"
    }];
    function get(x){
    return(x);
    }
-
-
-   chA=questions[runningQuestion].choiceA;
- chB=questions[runningQuestion].choiceB;
- chC=questions[runningQuestion].choiceC;
-answer=questions[runningQuestion].rightAnswer;
-
-function startQuestion(){
-var nothingLand=get("askingQuestion");
-var choiceOne=get("choiceOne");
-var choiceTwo= get("choiceTwo");
-var choiceThree= get("choiceThree");
-
-
-if (runningQuestion>=questions.length){
-
-
-  return false;
-  }
-    
-	nothingLand.innerHTML+=question;
-	choiceOne.innerHTML+=chA;
-	choiceTwo.innerHTML+=chB;
-	choiceThree.innerHTML+=chC;
-	}
-	function checkAnswer(){
-	choices= getElementsByName("choices");
-	
-	for(var i=0;i<=choices.length;i++){
-	if(choices[i].checked){
-	choices=choices[i].value;
-	}}
-	
-	if(question[runningQuestion]==answer){
-	correct++;
-	
-  }
  
+ 
+function startQuestion(){
+	var nothingLand = document.getElementById("askingQuestion");
+	var choiceOne = document.getElementById("choiceOne");
+	var choiceTwo = document.getElementById("choiceTwo");
+	var choiceThree = document.getElementById("choiceThree");
+	
+	if (runningQuestion <= questions.length){
+	get("HateMe").innerHTML = "Congrats! You know a Lot About ME XD";
+	
+	chA = questions[runningQuestion].choiceA;
+	chB = questions[runningQuestion].choiceB;
+	chC = questions[runningQuestion].choiceC;
+    answer = questions[runningQuestion].rightAnswer;
+	
+    nothingLand.innerHTML += question;
+    choiceOne.innerHTML +=chA;
+    choiceTwo.innerHTML += chB;
+    choiceThree.innerHTML += chC;
+}
+}
+function checkAnswer(){
+	 choices = document.getElementsByName('<%= choices.ClientID %>');
+	 
+	for(let choices of questions){
+		if(choices.checked){
+			choices=choices.value;
+		}
+	}
+    if(choice == answer){
+    correct++;
+  }
   runningQuestion++;
   
   startQuestion();
- }
+  }
 
-window.addEventListener("load",startQuestion);
 
+ 
+ window.onload = load;
+
+function reload(){
+window.location.reload();
+}
 </script>
+  </body>
+  
 </html>
