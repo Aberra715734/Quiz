@@ -13,29 +13,38 @@
 //right now this is a prototype
 	//I was able to get it to get the check the right answer to work
 	
-<p id="demo" name ></p>
+
+	<h1 id="nothingland"> hel1o </h1><br>
+<input type="radio" name="demo" value="A"> <label id=one >Hello</label><br>
+<input type="radio" name="demo" value="B"> <label id=two>Hello</label><br>
+<input type="radio" name="demo" value="C"> <label id=three>Hello</label><br><br>
+
+<button onclick="myFunction()">Try it</button>
 	
-</script
+<script>
 var correct = 0;
-var noodle = ["fake", "me", "up"];
-var apple = ["love", "respect", "guts"];
-var answer = ["A", "B", "C"]
+var noodle =["What my favourite color?","What is my favourite hobby?", "What is my favourite anime?",
+	"What is my favourite sauce?","What is my favourite Snack?", "How many sibling do I have?"];
+var choiceA = ["Red", "Skydiving","One Piece","Hot sauce","Ice cream","None"];
+var choiceB = [ "Blue","Fencing", "Hero Academia","Mayonaise", "Cookie","four"];
+var choiceC = ["Black", "Gaming","None","Relish", "Cake", "three"];
+var answer = ["A", "B", "C","A","B","C"];
 a = 0;
 
 function myFunction() {
     banana = document.getElementsByName("demo");
-    for (i = 0; i < banana.length; i++) {
-        if (banana[i].checked) {
-            banana = banana[i].value;
-        }
+   
+        if (banana[a].checked) {
+            banana = banana[a].value;
+        
     }
     if (banana == answer[a]) {
         correct++;
     }
     document.getElementById("nothingland").innerHTML = noodle[a];
-    document.getElementById("one").innerHTML = apple[a];
-    document.getElementById("two").innerHTML = apple[a];
-    document.getElementById("three").innerHTML = apple[a];
+    document.getElementById("one").innerHTML = choiceA[a];
+    document.getElementById("two").innerHTML = choiceB[a];
+    document.getElementById("three").innerHTML = choiceC[a];
     document.getElementById("right").innerHTML = correct;
     a++;
     console.log(a)
