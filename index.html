@@ -1,211 +1,43 @@
-<!Doctype html5>
+//Debuggin the whole code is really hurting my brain and wasting my time. I spent 4 days on it 
+//with little improvement, it time I make a new one.
+
+<!DOCTYPE html>
 <html>
-<head>
-<title> Quiz day</title>
-
-<style>
-.container {
-display:flex;
-
-justify-content:end;
-}
-
-body {background-color:lightblue;}
-
-.one {
-background-color:gray;
-border:red;
-width:50px;
-height:10px;
-margin:2px 2px; 
-
-}
-.two {
-background-color:gray;
-border:red;
-width:50px;
-height:10px;
-margin:2px 2px; 
-
-}
-.three {
-background-color:gray;
-border:red;
-width:50px;
-height:10px;
-margin:2px 2px; 
-
-}
-.four {
-background-color:gray;
-border:red;
-width:50px;
-height:10px;
-margin:2px 2px; 2px 2px;
-
-}
-.five {
-background-color:gray;
-border:red;
-width:50px;
-height:10px;
-margin:2px 2px; 
-
-}
-</style>
-
-</head>
-
 <body>
-<div class="container">
-<div class="one" id="one">
-
-</div>
-
-<div class="two" id="two">
-
-</div>
-<div class="three" id="three">
-
-</div>
-<div class="four" id="four">
-
-</div>
-<div class="five" id="five">
-
-</div>
-</div>
 
 
-</div>
-<form>
-  
-  <fieldset>
-
-  <legend> <h1 id="HateMe"> What do you know about me?</h1></legend>
-
-
-  
-  <h2  id = "askingQuestion"> </h2>
- 
-  <input type="radio" id="choiceOne" name="choices" value="choiceA">
-
-  <br>
-  <input type="radio" id="choiceTwo" name="choices" value="choiceB">
-<br>
-  
-  <input type="radio" id="choiceThree" name="choices" value="choiceC">
- <br>
- <br>
-  
-  <input type="submit" onclick="checkAnswer()">
-  <button onclick="reload">Reset</button>
-
-<button>
-    <a href="externaltraining.html">Test</a>
-</button>
-  </fieldset>
-  </form>
-  
-  
-  <script>
-var runningQuestion = 0;
-var correct=0;
-var chA, chB, chC, choices, choice, question = 0;
- 
-var questions = [
-{
-   question: "What my favourite color?",
-   choiceA: "Red",
-   choiceB: "Blue",
-   choiceC: "Black",
-   rightAnswer: "A"
-   }
-   ,
-   {
-   question: "What is my favourite hobby?",
-   choiceA: "Skydiving",
-   choiceB: "Fencing",
-   choiceC: "Gaming",
-   rightAnswer: "B"
-   },
-   {
-   question: "What is my favourite anime?",
-   choiceA: "One Piece",
-   choiceB: "Hero Academia",
-   choiceC: "None",
-   rightAnswer:"C"
-   },
-   {
-   question: "What is my favourite sauce?",
-   choiceA: "Hot sauce",
-   choiceB: "Mayonaise",
-   choiceC: "Relish",
-   rightAnswer: "A"
-   },
-   {
-   question: "What is my favourite Snack?",
-   choiceA: "Ice cream",
-   choiceB: "Cookie",
-   choiceC: "Cake",
-   rightAnswer: "B"
-   },
-   {
-   question: "How many sibling do I have?",
-   choiceA: "None",
-   choiceB: "four",
-   choiceC: "three",
-   rightAnswer: "C"
-   }];
-   function get(x){
-   return(x);
-   }
- 
- 
-function startQuestion(){
-	var nothingLand = document.getElementById("askingQuestion");
-	var choiceOne = document.getElementById("choiceOne");
-	var choiceTwo = document.getElementById("choiceTwo");
-	var choiceThree = document.getElementById("choiceThree");
+//This is from w3school.com which I found had finally worked after manipulating around the arrays
+//which I suck at, and it emerged as a masterpeice. The questions are iterating through as it should
 	
-	if (runningQuestion <= questions.length){
-	get("HateMe").innerHTML = "Congrats! You know a Lot About ME XD";
+//I'll manipulate around to see if I can differ between the right and wrong answer
+//right now this is a prototype
 	
-	chA = questions[runningQuestion].choiceA;
-	chB = questions[runningQuestion].choiceB;
-	chC = questions[runningQuestion].choiceC;
-    answer = questions[runningQuestion].rightAnswer;
-	
-    nothingLand.innerHTML += question;
-    choiceOne.innerHTML +=chA;
-    choiceTwo.innerHTML += chB;
-    choiceThree.innerHTML += chC;
-}
-}
-function checkAnswer(){
-	 choices = document.getElementsByName('<%= choices.ClientID %>');
-	 
-	for(let choices of questions){
-		if(choices.checked){
-			choices=choices.value;
-		}
-	}
-    if(choice == answer){
-    correct++;
+<p id="demo"></p>
+
+<h1 id="nothingland"> hel1o </h1><br>
+<input type="radio" name="demo"> <label id=one>Hello</label><br>
+<input type="radio" name="demo"> <label id=two>Hello</label><br>
+<input type="radio" name="demo"> <label id=three>Hello</label><br><br>
+
+<button onclick="myFunction()">Try it</button>
+
+
+<script>
+var apple=["love","respect","guts"]
+a=0;
+function myFunction() {
+    
+  document.getElementById("one").innerHTML=apple[a];
+  document.getElementById("two").innerHTML=apple[a];
+  document.getElementById("three").innerHTML=apple[a];
+  
+a++;
+
+if (a>3)
+return false;
+
   }
-  runningQuestion++;
-  
-  startQuestion();
-  }
-
-
- 
- window.onload = load;
-
-function reload(){
-window.location.reload();
-}
 </script>
-  </body>
-  
+
+</body>
 </html>
