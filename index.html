@@ -11,32 +11,39 @@
 	
 //I'll manipulate around to see if I can differ between the right and wrong answer
 //right now this is a prototype
+	//I was able to get it to get the check the right answer to work
 	
-<p id="demo"></p>
+<p id="demo" name ></p>
+	
+</script
+var correct = 0;
+var noodle = ["fake", "me", "up"];
+var apple = ["love", "respect", "guts"];
+var answer = ["A", "B", "C"]
+a = 0;
 
-<h1 id="nothingland"> hel1o </h1><br>
-<input type="radio" name="demo"> <label id=one>Hello</label><br>
-<input type="radio" name="demo"> <label id=two>Hello</label><br>
-<input type="radio" name="demo"> <label id=three>Hello</label><br><br>
-
-<button onclick="myFunction()">Try it</button>
-
-
-<script>
-var apple=["love","respect","guts"]
-a=0;
 function myFunction() {
-    
-  document.getElementById("one").innerHTML=apple[a];
-  document.getElementById("two").innerHTML=apple[a];
-  document.getElementById("three").innerHTML=apple[a];
-  
-a++;
-
-if (a>3)
-return false;
-
-  }
+    banana = document.getElementsByName("demo");
+    for (i = 0; i < banana.length; i++) {
+        if (banana[i].checked) {
+            banana = banana[i].value;
+        }
+    }
+    if (banana == answer[a]) {
+        correct++;
+    }
+    document.getElementById("nothingland").innerHTML = noodle[a];
+    document.getElementById("one").innerHTML = apple[a];
+    document.getElementById("two").innerHTML = apple[a];
+    document.getElementById("three").innerHTML = apple[a];
+    document.getElementById("right").innerHTML = correct;
+    a++;
+    console.log(a)
+    console.log(correct)
+    console.log(answer[a])
+    if (a > 3)
+        return false;
+}
 </script>
 
 </body>
